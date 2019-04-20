@@ -1,15 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  company: MyString
-  address: MyString
-  city: MyString
-  state: MyString
-  zip: MyString
+  company: CoverMyMeds
+  address: 2 Miranova Pl
+  city: Columbus
+  state: Ohio
+  zip: 43215
 
 two:
-  company: MyString
-  address: MyString
-  city: MyString
-  state: MyString
-  zip: MyString
+  company: Fake Company
+  address: 123 Fake Street
+  city: Metropolis
+  state: Ofmind
+  zip: 11111

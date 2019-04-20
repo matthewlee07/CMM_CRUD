@@ -2,12 +2,10 @@
 
 one:
   task: one
-  duration: 1
-  note: MyText
+  note: Rails and MVC is hard...
   start_time: 2019-04-20 17:06:13
 
 two:
   task: two
-  duration: 1
   note: MyText
   start_time: 2019-04-20 17:06:13

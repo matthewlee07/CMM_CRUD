@@ -3,7 +3,7 @@
 one:
   project: one
   user: one
-  task_name: MyString
+  task_name: Learn Rails
 
 two:
   project: two
