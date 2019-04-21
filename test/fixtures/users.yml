@@ -2,10 +2,11 @@
 
 one:
   username: MyString1
-  password: MyString
-  email: MyString1@email.com
+  email: MyString@email.com
+  password_digest: <%= User.digest('password') %>
+  # admin: true
 
 two:
   username: MyString2
-  password: MyString
   email: MyString2@email.com
+  password_digest: <%= User.digest('password') %>
