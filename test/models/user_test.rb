@@ -7,7 +7,6 @@ class UserTest < ActiveSupport::TestCase
     @task = tasks(:one)
     @project = projects(:one)
   end
-  
 
   test "should be valid" do 
     assert @user.valid?
