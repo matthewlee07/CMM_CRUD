@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2019_04_21_063040) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["customer_id"], name: "index_projects_on_customer_id"
+    t.index ["project_name", "customer_id"], name: "index_projects_on_project_name_and_customer_id"
   end
 
   create_table "task_entries", force: :cascade do |t|

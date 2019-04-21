@@ -4,6 +4,8 @@ class UserTest < ActiveSupport::TestCase
 
   def setup
     @user = users(:one)
+    @task = tasks(:one)
+    @project = projects(:one)
   end
   
 
@@ -23,7 +25,7 @@ class UserTest < ActiveSupport::TestCase
     @user.email = " " 
     assert_not @user.valid?
   end
-  # length validation
+  # field length validation
   test "name should not be too long" do
     @user.username = "a" * 51
     assert_not @user.valid?
@@ -82,5 +84,15 @@ class UserTest < ActiveSupport::TestCase
     @user.email = mixed_case_email
     @user.save
     assert_equal mixed_case_email.downcase, @user.reload.email
+  end
+  #has_many destroy
+  test "associated tasks should be destroyed" do 
+    @user.tasks.create!(
+      task_name: @task.task_name, 
+      project_id: @project.id
+    )
+    assert_difference 'User.count', -1 do 
+      @user.destroy
+    end
   end
 end

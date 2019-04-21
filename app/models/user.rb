@@ -8,6 +8,7 @@ class User < ApplicationRecord
   validates :email, presence:true, length: { maximum: 255 }, format:{ with: URI::MailTo::EMAIL_REGEXP}, uniqueness: { case_sensitive: false }
 
   has_secure_password
+  has_many :tasks, dependent: :destroy
 
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
@@ -16,11 +17,11 @@ class User < ApplicationRecord
 
   private
 
-    def downcase_email
-      self.email = email.downcase
-    end
+  def downcase_email
+    self.email = email.downcase
+  end
 
-    def downcase_username
-      self.username = username.downcase
-    end
+  def downcase_username
+    self.username = username.downcase
+  end
 end
