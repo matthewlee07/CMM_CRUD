@@ -67,4 +67,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
 # Adding for particular app
+gem 'jquery-rails'
+gem 'bootstrap-sass'
 gem 'faker'
+gem 'popper_js', '~> 1.9', '>= 1.9.9'
