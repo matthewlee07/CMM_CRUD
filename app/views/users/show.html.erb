@@ -20,7 +20,7 @@
       <% if @user.tasks.any? %>
         <h3>Tasks (<%= @user.tasks.count %>)</h3>
         <ul class="partial-tasks">
-          <%= render @tasks %>
+          <%-#<%= render @tasks %>
         </ul>
       <% end %>
     </div>

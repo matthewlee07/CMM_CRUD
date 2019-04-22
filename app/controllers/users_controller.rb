@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     # session[:return_to] ||= request.referer
     if @user.save
-      # log_in @user
+      log_in @user
       flash[:success] = "Created user"
       redirect_to @user
     else
