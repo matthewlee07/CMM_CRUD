@@ -1,0 +1,28 @@
+<div class="resource-container">
+  <h1>User</h1>
+    <div class="resource-info">
+      <ul>
+        <li>Username: <%= @user.username %></li>
+        <li>Email: <%= @user.email %></li>
+      </ul>
+    </div>
+
+    <div>
+      <a href="/users/<%=@user.id %>/edit" class="btn btn-primary">Edit</a>
+      <%= link_to "delete", 
+        @User, 
+        method: :delete, 
+        data: { confirm: "You sure?" }, 
+        class: ["btn","btn-primary"] %>
+    </div>
+
+    <div>
+      <% if @user.tasks.any? %>
+        <h3>Tasks (<%= @user.tasks.count %>)</h3>
+        <ul class="partial-tasks">
+          <%= render @tasks %>
+        </ul>
+      <% end %>
+    </div>
+    <%-#<%= link_to "Create Task", tasks_createform_path, class: "btn btn-primary" %>
+</div>
