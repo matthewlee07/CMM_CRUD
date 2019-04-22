@@ -44,7 +44,7 @@ admin = User.create(
     username: "SampleAdmin",
     email: "SampleAdmin@email.com",
     password: "password",
-    # admin: true
+    admin: true
 )
 
 customer = Customer.create(
