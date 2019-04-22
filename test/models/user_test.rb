@@ -84,7 +84,7 @@ class UserTest < ActiveSupport::TestCase
     @user.save
     assert_equal mixed_case_email.downcase, @user.reload.email
   end
-  #has_many destroy
+  # has_many destroy
   test "associated tasks should be destroyed" do 
     @user.tasks.create!(
       task_name: @task.task_name, 
@@ -93,5 +93,9 @@ class UserTest < ActiveSupport::TestCase
     assert_difference 'User.count', -1 do 
       @user.destroy
     end
+  end
+  # authentication
+  test "authenticated? should return false for a user with nil digest" do
+    assert_not @user.authenticated?('')
   end
 end
