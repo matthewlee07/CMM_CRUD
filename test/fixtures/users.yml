@@ -4,7 +4,7 @@ one:
   username: MyString1
   email: MyString@email.com
   password_digest: <%= User.digest('password') %>
-  # admin: true
+  admin: true
 
 two:
   username: MyString2
