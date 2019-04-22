@@ -1,4 +1,4 @@
-20.times do
+30.times do
 
     # User     
     user = User.create(
