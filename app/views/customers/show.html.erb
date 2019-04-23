@@ -22,7 +22,7 @@
       <% if @customer.projects.any? %>
         <h3>Projects (<%= @customer.projects.count %>)</h3>
         <ul class="partial-projects">
-          <%#<%= render @projects %>
+          <%= render @projects %>
         </ul>
       <% end %>
     </div>

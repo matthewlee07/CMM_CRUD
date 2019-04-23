@@ -12,15 +12,15 @@ class TaskEntryTest < ActiveSupport::TestCase
     assert @task_entry.valid?
   end 
   # field should be present
-  test "task_id should be present" do 
+  test "task_id should be present" do
     @task_entry.task_id = " "
     assert_not @task_entry.valid?
   end
-  test "note should be present" do 
+  test "note should be present" do
     @task_entry.note = " "
     assert_not @task_entry.valid?
   end
-  test "start_time should be present" do 
+  test "start_time should be present" do
     @task_entry.start_time = nil
     assert_not @task_entry.valid?
   end

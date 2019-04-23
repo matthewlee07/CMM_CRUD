@@ -5,6 +5,7 @@ class CreateTaskEntries < ActiveRecord::Migration[5.2]
       t.integer :duration
       t.text :note
       t.datetime :start_time
+      t.integer :task_id
 
       t.timestamps
     end

@@ -2,6 +2,7 @@ require 'uri'
 
 class User < ApplicationRecord
   attr_accessor :remember_token
+
   before_save :downcase_email, :downcase_username
   validates :username, presence: true, length: {maximum: 50}, uniqueness: {case_sensitive: false}
   validates :password, presence: true, length: {maximum:50, minimum: 7}, allow_nil: true

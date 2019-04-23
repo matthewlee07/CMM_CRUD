@@ -3,34 +3,40 @@ class UsersController < ApplicationController
   before_action :correct_user,   only: [:edit, :update]
   before_action :admin_user,     only: :destroy
 
+  def initialize
+    super
+    @resource = "Users"
+  end
+
   # CREATE
-  def create 
+  def create
     @user = User.new(user_params)
-    # session[:return_to] ||= request.referer
+    session[:return_to] ||= request.referer
     if @user.save
       log_in @user
       flash[:success] = "Created user"
       redirect_to @user
     else
       render :new
-    end 
+    end
   end
 
   def new
-    @user = User.new
+    @user = User.new if @user == nil
   end
 
   # READ
-  def show 
+  def show
     @user = User.find(params[:id])
+    @tasks = @user.tasks
   end
 
-  def index 
+  def index
     @users = User.all
   end
 
   #  UPDATE
-  def edit 
+  def edit
     @user = User.find(params[:id])
   end
 
@@ -51,7 +57,7 @@ class UsersController < ApplicationController
     redirect_to root_path
   end
 
-  private 
+  private
     def user_params
       params.require(:user).permit(:username, :email, :password)
     end

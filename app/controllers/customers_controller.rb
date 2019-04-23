@@ -1,20 +1,20 @@
 class CustomersController < ApplicationController
   before_action :logged_in_user
 
-  def initialize 
+  def initialize
     super
     @resource = "Customers"
   end
 
   # CREATE
-  def create 
+  def create
     @customer = Customer.new(customer_params)
     if @customer.save
       flash[:success] = "Created customer"
       redirect_to @customer
     else
       render :new
-    end 
+    end
   end
 
   def new
@@ -22,19 +22,19 @@ class CustomersController < ApplicationController
   end
 
   # READ
-    def show 
+    def show
     @customer = Customer.find(params[:id])
     @projects = @customer.projects
   end
 
-  def index 
+  def index
     @customers = Customer.all
   end
   
   # UPDATE
-  def edit 
+  def edit
     @customer = Customer.find(params[:id])
-  end 
+  end
   
   def update
     @customer = Customer.find(params[:id])
@@ -53,8 +53,8 @@ class CustomersController < ApplicationController
     redirect_to customers_url
   end
 
-  private 
-    def customer_params 
+  private
+    def customer_params
       params.require(:customer).permit(:company, :address, :city, :state, :zip)
     end
 end

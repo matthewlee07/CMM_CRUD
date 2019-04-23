@@ -25,7 +25,7 @@ class TaskTest < ActiveSupport::TestCase
   end
   # field length validation
   test "task name should not be too long" do
-    @task.task_name = "a" * 51
+    @task.task_name = "a" * 501
     assert_not @task.valid?
   end
   # has_many destroy
