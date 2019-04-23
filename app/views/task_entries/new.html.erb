@@ -1,0 +1,21 @@
+<% provide(:title, 'Create Task Entry') %>
+<h1>Create Task Entry</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@task_entry) do |f| %>
+      <%= render 'shared/error_messages', :@profile => @task_entry %>
+
+       <%= f.label :note %>
+      <%= f.text_field :note, class: 'form-control'%>
+
+      <%= f.label :task %>
+      <%= f.select :task_id, Task.all.collect{|t|[t.task_name, t.id]},{}, { :class => "form-control" }%>
+
+      <%= f.label :start_time %>
+      <%= f.datetime_select :start_time, {}, { :class => "form-control date-select" }%>
+
+      <%= f.submit "Create task entry", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

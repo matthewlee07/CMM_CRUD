@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/customers/new', to: 'customers#new'
   get '/projects/new', to: 'projects#new'
   get '/tasks/new', to: 'tasks#new'
+  get '/task_entries/new', to: 'task_entries#new'
 
   get    '/login', to: 'sessions#new'
   post   '/login', to: 'sessions#create'
@@ -14,4 +15,5 @@ Rails.application.routes.draw do
   resources :customers
   resources :projects
   resources :tasks
+  resources :task_entries
 end
