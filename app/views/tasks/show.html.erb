@@ -1,0 +1,26 @@
+<div class="resource-container">
+  <h1>Task</h1>
+    <div class="resource-info">
+      <ul>
+        <li>Task Name: <%= @task.task_name %></li>
+      </ul>
+    </div>
+    <div>
+      <a href="/tasks/<%=@task.id %>/edit" class="btn btn-primary">Edit</a>
+      <%= link_to "delete", 
+        @Task, 
+        method: :delete, 
+        data: { confirm: "You sure?" }, 
+        class: ["btn","btn-primary"] %>
+    </div>
+
+    <div>
+      <% if @task.task_entries.any? %>
+        <h3>Task Entries (<%= @task.task_entries.count %>)</h3>
+        <ul class="partial-task_entries">
+          <%= render @task_entries %>
+        </ul>
+      <% end %>
+    </div>
+    <%= link_to "Create Task Entry", task_entries_new_path, class: "btn btn-primary" %>
+</div>
