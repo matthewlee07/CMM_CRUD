@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   
   get '/users/new', to: 'users#new'
   get '/customers/new', to: 'customers#new'
+  get '/projects/new', to: 'projects#new'
 
   get    '/login', to: 'sessions#new'
   post   '/login', to: 'sessions#create'
@@ -10,4 +11,5 @@ Rails.application.routes.draw do
 
   resources :users
   resources :customers
+  resources :projects
 end
