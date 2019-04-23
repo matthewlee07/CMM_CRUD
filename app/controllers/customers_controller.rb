@@ -22,7 +22,7 @@ class CustomersController < ApplicationController
   end
 
   # READ
-    def show
+  def show
     @customer = Customer.find(params[:id])
     @projects = @customer.projects
   end
@@ -30,12 +30,12 @@ class CustomersController < ApplicationController
   def index
     @customers = Customer.all
   end
-  
+
   # UPDATE
   def edit
     @customer = Customer.find(params[:id])
   end
-  
+
   def update
     @customer = Customer.find(params[:id])
     if @customer.update_attributes(customer_params)
