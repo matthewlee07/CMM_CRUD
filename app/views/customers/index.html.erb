@@ -1,2 +1,12 @@
-<h1>Customers#index</h1>
-<p>Find me in app/views/customers/index.html.erb</p>
+<% provide(:title, 'All Customers') %>
+<h1>All Customers</h1>
+
+<ul class="resources">
+  <% @customers.each do |customer| %>
+    <li>
+      <%= link_to customer.company, customer %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Create Customer", customers_new_path, class: "btn btn-lg btn-primary" %>

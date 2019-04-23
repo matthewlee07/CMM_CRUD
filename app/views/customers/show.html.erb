@@ -1,2 +1,29 @@
-<h1>Customers#show</h1>
-<p>Find me in app/views/customers/show.html.erb</p>
+<div class="resource-container">
+  <h1>Customer</h1>
+    <div class="resource-info">
+        <ul>
+          <li>Company: <%= @customer.company %></li>
+          <li>Address: <%= @customer.address%></li>
+          <li>City: <%= @customer.city%></li>
+          <li>State: <%=@customer.state%></li>
+          <li>Zip: <%=@customer.zip %></li>
+        </ul>
+    </div>
+    <div>
+      <a href="/customers/<%=@customer.id %>/edit" class="btn btn-primary">Edit</a>
+      <%= link_to "delete", 
+        @Customer, 
+        method: :delete, 
+        data: { confirm: "You sure?" }, 
+        class: ["btn","btn-primary"] %>
+    </div>
+
+    <div>
+      <% if @customer.projects.any? %>
+        <h3>Projects (<%= @customer.projects.count %>)</h3>
+        <ul class="partial-projects">
+          <%#<%= render @projects %>
+        </ul>
+      <% end %>
+    </div>
+</div>
