@@ -15,7 +15,7 @@
       <%= f.label :task %>
       <%= f.select :task_id, Task.all.collect{|t|[t.task_name, t.id]}%>
 
-      <%= f.submit "Save changes", class: "btn btn-primary" %>
+      <%= f.submit "Save changes", class: "btn btn-primary form-button-create" %>
     <% end %>
   </div>
 </div>

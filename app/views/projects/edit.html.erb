@@ -12,7 +12,7 @@
       <%= f.label :customer %>
       <%= f.select :customer_id, Customer.all.collect{|c|[c.company, c.id]}, {}, {:class => 'form-control'}%>
 
-      <%= f.submit "Save changes", class: "btn btn-primary" %>
+      <%= f.submit "Save changes", class: "btn btn-primary form-button-create" %>
     <% end %>
   </div>
 </div>
