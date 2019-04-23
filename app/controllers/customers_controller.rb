@@ -1,6 +1,6 @@
 class CustomersController < ApplicationController
   before_action :logged_in_user
-  # HELP ASK NICK
+
   def initialize 
     super
     @resource = "Customers"

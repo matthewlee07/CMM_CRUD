@@ -4,7 +4,7 @@ class TasksController < ApplicationController
   def initialize 
       super
       @resource = "Tasks"
-    end
+      end
 
   # CREATE
   def create 
@@ -49,7 +49,7 @@ class TasksController < ApplicationController
   def edit 
       @task = Task.find(params[:id])
   end 
-  
+
   # DESTROY
   def destroy
       Task.find(params[:id]).destroy
@@ -59,6 +59,6 @@ class TasksController < ApplicationController
 
   private 
   def task_params 
-    params.require(:task).permit(:project_id, :user_id, :task_name)
+      params.require(:task).permit(:project_id, :user_id, :task_name)
   end
 end
