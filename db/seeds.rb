@@ -23,20 +23,22 @@
     )
 
     # Task
-    task = Task.create(
-        task_name: Faker::Hacker.say_something_smart,
-        project_id: project.id,
-        user_id: customer.id 
-    )
-
-    # Task Entry
-    TaskEntry.create(
-        note: Faker::Quote.yoda,
-        start_time: Faker::Time.backward(30),
-        updated_at: Time.now,
-        task_id: task.id
-    )
-
+    2.times do 
+        task = Task.create(
+            task_name: Faker::Hacker.say_something_smart,
+            project_id: project.id,
+            user_id: customer.id 
+        )
+        2.times do 
+            # Task Entry
+        TaskEntry.create(
+            note: Faker::Quote.yoda,
+            start_time: Faker::Time.backward(30),
+            updated_at: Time.now,
+            task_id: task.id
+        )
+        end
+    end
 end
 
 # User: Admin

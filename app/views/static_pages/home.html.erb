@@ -7,3 +7,6 @@
   </div>
   <%= link_to "Create User", users_new_path, class: "btn btn-lg btn-primary button-create" %>
 </div>
+<div class="center">
+  <%= link_to 'Modal popup', modal_new_path,  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window', class: 'btn btn-primary btn-lg form-button-create'}  %>
+</div>
