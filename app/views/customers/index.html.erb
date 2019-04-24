@@ -1,6 +1,6 @@
 <% provide(:title, 'All Customers') %>
 <h1>All Customers</h1>
-
+<%= render 'shared/paginate', :@profile => @customers%>
 <ul class="resources">
   <% @customers.each do |customer| %>
     <li>
@@ -8,6 +8,7 @@
     </li>
   <% end %>
 </ul>
+<%= render 'shared/paginate', :@profile => @customers%>
 <div class="center">
   <%= link_to "Create Customer", customers_new_path, class: "btn btn-lg btn-primary" %>
 </div>
