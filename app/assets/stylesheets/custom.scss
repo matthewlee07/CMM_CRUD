@@ -5,6 +5,7 @@
     overflow: auto;
     padding: 10px 0;
     border-bottom: 1px solid #eaeaea;
+    padding-left: 5%;
   }
 }
 
@@ -28,10 +29,16 @@ input {
 }
 
 .button-create {
-  width: 100%;
+  min-width: 20%;
+  padding: 0.5em 1em;
 }
 
-.button-create-form {
+.form-select,
+.form-button-create {
+  margin-top: 1em;
+}
+
+.relationship-button-create {
   margin-top: 1em;
 }
 
@@ -55,4 +62,18 @@ input {
 #session_remember_me {
   width: auto;
   margin-left: 0;
+}
+
+/* partials */
+
+.partial-customers,
+.partial-projects,
+.partial-tasks,
+.partial-task_entries {
+  list-style: none;
+  padding: 0;
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
 }

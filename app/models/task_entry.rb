@@ -7,21 +7,21 @@ class TaskEntry < ApplicationRecord
   after_initialize :set_duration
 
   def updated_at=(value)
-      self[:updated_at] = value
-      set_duration
+    self[:updated_at] = value
+    set_duration
   end
 
   def start_time=(value)
-      self[:start_time] = value
-      set_duration
+    self[:start_time] = value
+    set_duration
   end
 
   def set_duration()
-      self[:duration] = calculate_duration
+    self[:duration] = calculate_duration
   end
 
   private
   def calculate_duration
-      (updated_at && start_time) ? (updated_at - start_time).to_i : nil
+    (updated_at && start_time) ? (updated_at - start_time).to_i : nil
   end
 end

@@ -1,0 +1,26 @@
+<div class="resource-container">
+  <h1>Project</h1>
+    <div class="resource-info">
+      <ul>
+        <li>Project: <%= @project.project_name %></li>
+        <li>Customer: <%= @project.customer.company%></li>
+      </ul>
+    </div>
+    <div>
+      <a href="/projects/<%=@project.id %>/edit" class="btn btn-primary">Edit</a>
+      <%= link_to "delete", 
+        @Project, 
+        method: :delete, 
+        data: { confirm: "You sure?" }, 
+        class: ["btn","btn-primary"] %>
+    </div>
+    <div>
+      <% if @project.tasks.any? %>
+        <h3>Tasks (<%= @project.tasks.count %>)</h3>
+        <ul class="partial-tasks">
+          <%= render @tasks %>
+        </ul>
+      <% end %>
+    </div>
+     <%= link_to "Add Task", tasks_new_path, class: "btn btn-primary relationship-button-create" %>
+</div>

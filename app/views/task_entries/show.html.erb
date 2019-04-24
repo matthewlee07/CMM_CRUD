@@ -1,0 +1,18 @@
+<div class="resource-container">
+  <h1>Task Entry</h1>
+    <div class="resource-info">
+      <ul>
+        <li>Task Entry Note: <%= @task_entry.note %></li>
+        <li>Start Time: <%= @task_entry.start_time %></li>
+        <li>Duration: <%= @task_entry.duration %> seconds</li>
+      </ul>  
+    </div>
+    <div>
+      <a href="/task_entries/<%=@task_entry.id %>/edit" class="btn btn-primary">Edit</a>
+      <%= link_to "delete", 
+        @Task_Entry, 
+        method: :delete, 
+        data: { confirm: "You sure?" }, 
+        class: ["btn","btn-primary"] %>
+    </div>
+</div>

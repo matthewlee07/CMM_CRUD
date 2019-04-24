@@ -1,0 +1,13 @@
+<% provide(:title, 'All Customers') %>
+<h1>All Customers</h1>
+
+<ul class="resources">
+  <% @customers.each do |customer| %>
+    <li>
+      <%= link_to customer.company, customer %>
+    </li>
+  <% end %>
+</ul>
+<div class="center">
+  <%= link_to "Create Customer", customers_new_path, class: "btn btn-lg btn-primary" %>
+</div>

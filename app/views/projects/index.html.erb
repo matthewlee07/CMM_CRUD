@@ -1,0 +1,13 @@
+<% provide(:title, 'All Projects') %>
+<h1>All Projects</h1>
+
+<ul class="resources">
+  <% @projects.each do |project| %>
+    <li> 
+      <%= link_to project.project_name, project %>
+    </li>
+  <% end %>
+</ul>
+<div class="center">
+  <%= link_to "Create Project", projects_new_path, class: "btn btn-lg btn-primary" %>
+</div>

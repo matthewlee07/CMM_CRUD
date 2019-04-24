@@ -1,0 +1,18 @@
+<% provide(:title, 'Edit Project') %>
+<h1>Edit Project</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@project) do |f| %>
+      <%= render 'shared/error_messages', :@profile => @project %>
+
+      <%= f.label :project_name %>
+      <%= f.text_field :project_name, class: 'form-control'%>
+
+      <%= f.label :customer %>
+      <%= f.select :customer_id, Customer.all.collect{|c|[c.company, c.id]}, {}, {:class => 'form-control'}%>
+
+      <%= f.submit "Save changes", class: "btn btn-primary form-button-create" %>
+    <% end %>
+  </div>
+</div>
