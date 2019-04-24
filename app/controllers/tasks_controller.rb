@@ -25,7 +25,7 @@ class TasksController < ApplicationController
 
   # READ
   def index 
-      @tasks = Task.paginate(page: params[:page], :per_page => 15)
+      @tasks = Task.paginate(page: params[:page], :per_page => 10)
   end
 
   def show 

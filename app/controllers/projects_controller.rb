@@ -24,7 +24,7 @@ class ProjectsController < ApplicationController
 
   # READ
   def index
-    @projects = Project.paginate(page: params[:page], :per_page => 15)
+    @projects = Project.paginate(page: params[:page], :per_page => 10)
   end
 
   def show

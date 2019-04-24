@@ -28,7 +28,7 @@ class CustomersController < ApplicationController
   end
 
   def index
-    @customers = Customer.paginate(page: params[:page], :per_page => 15)
+    @customers = Customer.paginate(page: params[:page], :per_page => 10)
   end
 
   # UPDATE

@@ -1,0 +1,24 @@
+/* footer */
+
+footer {
+  border-top: 1px solid #eaeaea;
+  color: #337ab7;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  margin-bottom: 4vh;
+  ul {
+    list-style-type: none;
+    display: flex;
+    align-items: stretch; /* Default */
+    justify-content: space-between;
+    width: 100%;
+    margin: 0;
+    padding: 2em 10em 0 10em;
+    li {
+      display: block;
+      flex: 0 1 auto; /* Default */
+      list-style-type: none;
+    }
+  }
+}
