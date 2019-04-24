@@ -43,8 +43,8 @@ end
 
 # User: Admin
 admin = User.create(
-    username: "SampleAdmin",
-    email: "SampleAdmin@email.com",
+    username: "Admin",
+    email: "Admin@email.com",
     password: "password",
     admin: true
 )
