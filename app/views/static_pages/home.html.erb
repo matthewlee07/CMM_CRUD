@@ -5,5 +5,15 @@
       Matt Lee's CMM Interview
     </h2>
   </div>
-  <%= link_to "Create User", users_new_path, class: "btn btn-lg btn-primary button-create" %>
+  
+  <% if logged_in?%>
+    <%= link_to "Create Customer", customers_new_path, class: "btn btn-lg btn-primary button-create" %>
+    <%= link_to "Create Project", projects_new_path, class: "btn btn-lg btn-primary button-create" %>
+    <%= link_to "Create Task", tasks_new_path, class: "btn btn-lg btn-primary button-create" %>
+    <%= link_to "Create Task Entry", task_entries_new_path, class: "btn btn-lg btn-primary button-create" %>
+
+  <% else %>
+    <%= link_to "Create User", users_new_path, class: "btn btn-lg btn-primary button-create" %>
+    <%= link_to "Log in", login_path, {:id => "login-sm"} %>
+  <% end %>
 </div>
