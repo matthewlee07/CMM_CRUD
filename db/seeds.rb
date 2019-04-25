@@ -1,45 +1,45 @@
-# 5.times do
+5.times do
 
-#     # User     
-#     user = User.create(
-#         username: Faker::Name.unique.name,
-#         password: "password",
-#         email: Faker::Internet.unique.email
-#     )
+    # User     
+    user = User.create(
+        username: Faker::Name.unique.name,
+        password: "password",
+        email: Faker::Internet.unique.email
+    )
 
-#     # Customer
-#     customer = Customer.create(
-#         company: Faker::Company.unique.name, 
-#         address: Faker::Address.street_address, 
-#         city: Faker::Address.city,
-#         state: Faker::Address.state, 
-#         zip: Faker::Address.zip
-#     )
-#     2.times do 
-#         # Project
-#         project = Project.create(
-#             project_name: Faker::Job.key_skill, 
-#             customer_id: customer.id
-#         )
-#         2.times do 
-#             # Task
-#             task = Task.create(
-#                 task_name: Faker::Hacker.say_something_smart,
-#                 project_id: project.id,
-#                 user_id: customer.id 
-#         )
-#             2.times do 
-#                 # Task Entry
-#                 TaskEntry.create(
-#                     note: Faker::Quote.yoda,
-#                     start_time: Faker::Time.backward(30),
-#                     updated_at: Time.now,
-#                     task_id: task.id
-#                 )
-#             end
-#         end
-#     end
-# end
+    # Customer
+    customer = Customer.create(
+        company: Faker::Company.unique.name, 
+        address: Faker::Address.street_address, 
+        city: Faker::Address.city,
+        state: Faker::Address.state, 
+        zip: Faker::Address.zip
+    )
+    2.times do 
+        # Project
+        project = Project.create(
+            project_name: Faker::Job.key_skill, 
+            customer_id: customer.id
+        )
+        2.times do 
+            # Task
+            task = Task.create(
+                task_name: Faker::Hacker.say_something_smart,
+                project_id: project.id,
+                user_id: customer.id 
+        )
+            2.times do 
+                # Task Entry
+                TaskEntry.create(
+                    note: Faker::Quote.yoda,
+                    start_time: Faker::Time.backward(30),
+                    updated_at: Time.now,
+                    task_id: task.id
+                )
+            end
+        end
+    end
+end
 
 # User: Admin
 admin = User.create(

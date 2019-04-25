@@ -10,7 +10,7 @@
       <%= f.text_field :note, class: 'form-control'%>
 
       <%= f.label :task %>
-      <%= f.select :task_id, Task.all.collect{|t|[t.task_name, t.id]},{}, { :class => "form-control" }%>
+      <%= f.select :task_id, Task.where(user_id: current_user.id).collect{|t|[t.task_name, t.id]},{}, { :class => "form-control" }%>
 
       <%= f.label :start_time %>
       <%= f.datetime_select :start_time, {}, { :class => "date-select form-select" }%>
