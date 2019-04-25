@@ -6,14 +6,11 @@
     <%= form_for(@task_entry) do |f| %>
       <%= render 'shared/error_messages', :@profile => @task_entry %>
 
-       <%= f.label :note %>
+      <%= f.label :note %>
       <%= f.text_field :note, class: 'form-control'%>
 
       <%= f.label :task %>
       <%= f.select :task_id, Task.where(user_id: current_user.id).collect{|t|[t.task_name, t.id]},{}, { :class => "form-control" }%>
-
-      <%= f.label :start_time %>
-      <%= f.datetime_select :start_time, {}, { :class => "date-select form-select" }%>
 
       <%= f.submit "Create task entry", class: "btn btn-primary form-button-create" %>
     <% end %>

@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get '/tasks/new', to: 'tasks#new'
   get '/task_entries/new', to: 'task_entries#new'
 
+
+
   get    '/login', to: 'sessions#new'
   post   '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
@@ -15,5 +17,8 @@ Rails.application.routes.draw do
   resources :customers
   resources :projects
   resources :tasks
-  resources :task_entries
+  resources :task_entries do 
+    put '/start', to: 'task_entries#start_time'
+    put '/stop', to: 'task_entries#stop_time'
+  end
 end

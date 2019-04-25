@@ -53,8 +53,24 @@ class TaskEntriesController < ApplicationController
         redirect_to task_entries_url
     end
 
+    def start_time
+      @task_entry = TaskEntry.find(params[:task_entry_id])
+      @task_entry.start_time = Time.now
+      @task_entry.save
+      flash[:success] = "Started timer"
+      redirect_to task_entries_url
+    end
+
+    def stop_time
+      @task_entry = TaskEntry.find(params[:task_entry_id])
+      @task_entry.duration = (Time.now - @task_entry.start_time)/60
+      @task_entry.save
+      flash[:success] = "Stop timer"
+      redirect_to task_entries_url
+    end
+
     private 
     def task_entry_params 
-      params.require(:task_entry).permit(:note, :start_time, :task_id)
+      params.require(:task_entry).permit(:note, :start_time, :task_id, :duration)
     end
 end
