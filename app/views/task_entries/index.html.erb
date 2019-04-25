@@ -1,13 +1,16 @@
 <% provide(:title, 'All Task Entries') %>
-<h1>All Task Entries</h1>
-
-<ul class="resources">
-  <% @task_entries.each do |task_entry| %>
-    <li>
-      <%= link_to task_entry.note, task_entry %>
-    </li>
-  <% end %>
-</ul>
-<div class="center">
-  <%= link_to "Create Task Entry", task_entries_new_path, class: "btn btn-lg btn-primary" %>
+<div class="container resources-container">
+  <h1>All Task Entries</h1>
+  <%= render 'shared/paginate', :@profile => @task_entries%>
+    <ul class="resources">
+      <% @task_entries.each do |task_entry| %>
+        <li>
+          <%= link_to task_entry.note, task_entry %>
+        </li>
+      <% end %>
+    </ul>
+  <%= render 'shared/paginate', :@profile => @task_entries%>
+  <div class="center">
+    <%= link_to "Create Task Entry", task_entries_new_path, class: "btn btn-lg btn-primary" %>
+  </div>
 </div>

@@ -1,16 +1,17 @@
 <% provide(:title, 'All Users') %>
 <h1>All Users</h1>
-
-<ul class="resources">
-  <% @users.each do |user| %>
-    <li>
-      <%= link_to user.username, user %>
-      <% if current_user.admin? && !current_user?(user) %>
-        <%= link_to "delete", user, method: :delete, data: { confirm: "You sure?" }, id: "admin-delete" %>
-      <% end %>
-    </li>
-  <% end %>
-</ul>
+<%= render 'shared/paginate', :@profile => @users%>
+  <ul class="resources">
+    <% @users.each do |user| %>
+      <li>
+        <%= link_to user.username, user %>
+        <% if current_user.admin? && !current_user?(user) %>
+          <%= link_to "delete", user, method: :delete, data: { confirm: "You sure?" }, id: "admin-delete" %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+<%= render 'shared/paginate', :@profile => @users%>
 <div class="center">
   <%= link_to "Create User", users_new_path, class: "btn btn-lg btn-primary" %>
 </div>

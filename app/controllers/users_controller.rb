@@ -31,8 +31,8 @@ class UsersController < ApplicationController
     @tasks = @user.tasks
   end
 
-  def index
-    @users = User.all
+  def index 
+    @users = User.paginate(page: params[:page], :per_page => 10)
   end
 
   # UPDATE

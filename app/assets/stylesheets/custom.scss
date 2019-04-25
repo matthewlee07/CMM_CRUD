@@ -1,3 +1,9 @@
+.resources-container {
+  position: relative;
+  height: 90vh;
+  position: relative;
+}
+
 .resources {
   padding: 0 5% 0 5%;
   list-style: none;
@@ -33,6 +39,7 @@ input {
   padding: 0.5em 1em;
 }
 
+.form-select,
 .form-button-create {
   margin-top: 1em;
 }
