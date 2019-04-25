@@ -31,7 +31,7 @@ class UsersController < ApplicationController
     @tasks = @user.tasks
   end
 
-  def index 
+  def index
     @users = User.paginate(page: params[:page], :per_page => 10)
   end
 
