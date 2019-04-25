@@ -21,6 +21,7 @@
           <%= render @task_entries %>
         </ul>
       <% end %>
+      <h5>Total Duration: "select all duration where current_id == task_entry.id => sum all duration"</h5>
     </div>
     <%= link_to "Add Task Entry", task_entries_new_path, class: "btn btn-primary relationship-button-create" %>
 </div>
