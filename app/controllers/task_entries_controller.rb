@@ -53,7 +53,7 @@ class TaskEntriesController < ApplicationController
         redirect_to task_entries_url
     end
 
-    def start_time
+    def start_now
       @task_entry = TaskEntry.find(params[:task_entry_id])
       @task_entry.start_time = Time.now
       @task_entry.save
@@ -61,7 +61,7 @@ class TaskEntriesController < ApplicationController
       redirect_to task_entries_url
     end
 
-    def stop_time
+    def stop_now
       @task_entry = TaskEntry.find(params[:task_entry_id])
       @task_entry.duration = (Time.now - @task_entry.start_time)/60
       @task_entry.save
