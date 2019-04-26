@@ -2,20 +2,24 @@
 <div class="container resources-container">
   <h1>All Task Entries</h1>
   <%= render 'shared/paginate', :@profile => @task_entries%>
-    <ul class="resources">
+    <ul class="resources resources-grid">
       <% @task_entries.each do |task_entry| %>
-        <li>
+        <li class="center">
           <%= link_to task_entry.note, task_entry %>
         </li>
-        <li> duration: 
+        <li class="center"> duration: 
           <%= task_entry.duration%>
         </li>
-        <%= form_for(task_entry, url: task_entry_start_path(task_entry), method: :put) do |f|%>
-          <% f.submit "Start Time", class:"btn btn-primary sm"%>
-        <% end%>
-        <%= form_for(task_entry, url: task_entry_stop_path(task_entry), method: :put) do |f|%>
-          <% f.submit "Stop Time", class:"btn btn-primary sm"%>
-        <% end%>
+        <li class="center">
+          <%= form_for(task_entry, url: task_entry_start_path(task_entry), method: :put) do |f|%>
+            <% f.submit "Start Time", class:"btn btn-primary sm"%>
+          <% end%>
+        </li>
+        <li class="center">
+          <%= form_for(task_entry, url: task_entry_stop_path(task_entry), method: :put) do |f|%>
+            <% f.submit "Stop Time", class:"btn btn-primary sm"%>
+          <% end%>
+        </li>
       <% end %>
     </ul>
   <%= render 'shared/paginate', :@profile => @task_entries%>
