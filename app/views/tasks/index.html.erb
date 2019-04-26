@@ -1,6 +1,6 @@
-<% provide(:title, 'All Tasks') %>
+<% provide(:title, 'Tasks') %>
 <div class="container resources-container">
-  <h1>All Tasks</h1>
+  <h1>Tasks</h1>
   <%= render 'shared/paginate', :@profile => @tasks%>
     <ul class="resources">
       <% @tasks.each do |task| %>
@@ -11,6 +11,6 @@
     </ul>
   <%= render 'shared/paginate', :@profile => @tasks%>
   <div class="center">
-    <%= link_to "Create Task", tasks_new_path, class: "btn btn-lg btn-primary" %>
+    <%= link_to "Create Task", new_task_path, class: "btn btn-lg btn-primary" %>
   </div>
 </div>

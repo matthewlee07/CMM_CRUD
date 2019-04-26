@@ -1,6 +1,6 @@
-<% provide(:title, 'All Projects') %>
+<% provide(:title, 'Projects') %>
 <div class="container resources-container">
-  <h1>All Projects</h1>
+  <h1>Projects</h1>
   <%= render 'shared/paginate', :@profile => @projects%>
     <ul class="resources">
       <% @projects.each do |project| %>
@@ -11,6 +11,6 @@
     </ul>
   <%= render 'shared/paginate', :@profile => @projects%>
   <div class="center">
-    <%= link_to "Create Project", projects_new_path, class: "btn btn-lg btn-primary" %>
+    <%= link_to "Create Project", new_project_path, class: "btn btn-lg btn-primary" %>
   </div>
 </div>

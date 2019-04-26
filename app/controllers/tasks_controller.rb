@@ -25,7 +25,7 @@ class TasksController < ApplicationController
 
   # READ
   def index 
-      @tasks = Task.paginate(page: params[:page], :per_page => 10)
+      @tasks = Task.where(user_id: current_user.id).paginate(page: params[:page], :per_page => 10)
   end
 
   def show 

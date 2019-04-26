@@ -7,13 +7,13 @@
   </div>
   
   <% if logged_in?%>
-    <%= link_to "Create Customer", customers_new_path, class: "btn btn-lg btn-primary button-create" %>
-    <%= link_to "Create Project", projects_new_path, class: "btn btn-lg btn-primary button-create" %>
-    <%= link_to "Create Task", tasks_new_path, class: "btn btn-lg btn-primary button-create" %>
-    <%= link_to "Create Task Entry", task_entries_new_path, class: "btn btn-lg btn-primary button-create" %>
+    <%= link_to "Create Customer", new_customer_path, class: "btn btn-lg btn-primary button-create" %>
+    <%= link_to "Create Project", new_project_path, class: "btn btn-lg btn-primary button-create" %>
+    <%= link_to "Create Task", new_task_path, class: "btn btn-lg btn-primary button-create" %>
+    <%= link_to "Create Task Entry", new_task_entry_path, class: "btn btn-lg btn-primary button-create" %>
 
   <% else %>
-    <%= link_to "Create User", users_new_path, class: "btn btn-lg btn-primary button-create" %>
+    <%= link_to "Create User", new_user_path, class: "btn btn-lg btn-primary button-create" %>
     <%= link_to "Log in", login_path, {:id => "login-sm"} %>
   <% end %>
 </div>

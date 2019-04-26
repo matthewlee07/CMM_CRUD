@@ -9,12 +9,6 @@
       <%= f.label :task_name %>
       <%= f.text_field :task_name, class: 'form-control'%>
 
-      <%= f.label :project %>
-      <%= f.select :project_id, Project.all.collect{|p|[p.project_name, p.id]}, {}, {:class => 'form-control'}%>
-
-      <%= f.label :user %>
-      <%= f.select :user_id, User.all.collect{|u|[u.username, u.id]}, {}, {:class => 'form-control'}%>
-
       <%= f.submit "Save changes", class: "btn btn-primary form-button-create" %>
     <% end %>
   </div>

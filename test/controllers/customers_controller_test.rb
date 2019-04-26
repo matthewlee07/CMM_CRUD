@@ -10,7 +10,7 @@ class CustomersControllerTest < ActionDispatch::IntegrationTest
   test "should get new" do
     log_in_as(@user)
     assert is_logged_in?
-    get customers_new_path
+    get new_customer_path
     assert_response :success
   end
 end

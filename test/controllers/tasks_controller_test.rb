@@ -11,7 +11,7 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
   test "should get new" do 
     log_in_as(@user)
     assert is_logged_in?
-    get tasks_new_path
+    get new_task_path
     assert_response :success
   end
 end

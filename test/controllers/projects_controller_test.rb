@@ -11,7 +11,7 @@ class ProjectsControllerTest < ActionDispatch::IntegrationTest
   test "should get new" do 
     log_in_as(@user)
     assert is_logged_in?
-    get projects_new_path
+    get new_project_path
     assert_response :success
   end
 end
