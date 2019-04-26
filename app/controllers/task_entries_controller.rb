@@ -25,6 +25,10 @@ class TaskEntriesController < ApplicationController
     # READ
     def index 
         @task_entries = TaskEntry.joins(:task).where("tasks.user_id = ?", current_user.id).paginate(page: params[:page], :per_page => 10)
+        
+        @total_duration = @task_entries.map do |task_entry|
+            task_entry.duration.present? ? task_entry.duration : 0
+        end.sum
     end
 
     def show 

@@ -40,7 +40,13 @@
           <% end %>
         </li>
       <% end %>
+      
     </ul>
+    <section class="center total-duration">
+      <span>Total Duration: </span> <%= @total_duration %> minutes
+    </section>
+    
+    
   <%= render 'shared/paginate', :@profile => @task_entries%>
   <div class="center">
     <%= link_to "Create Task Entry", new_task_entry_path, class: "btn btn-lg btn-primary" %>

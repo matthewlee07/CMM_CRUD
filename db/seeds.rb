@@ -28,7 +28,7 @@
                 project_id: project.id,
                 user_id: customer.id 
         )
-            1.times do 
+            3.times do 
                 # Task Entry
                 TaskEntry.create(
                     note: Faker::Quote.yoda,
