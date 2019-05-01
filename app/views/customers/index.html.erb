@@ -1,16 +1,16 @@
 <% provide(:title, 'Customers') %>
 <div class="container resources-container">
-  <h1>Customers</h1>
-  <%= render 'shared/paginate', :@profile => @customers%>
-  <ul class="resources">
-    <% @customers.each do |customer| %>
-      <li>
-        <%= link_to customer.company, customer %>
-      </li>
-    <% end %>
-  </ul>
-  <%= render 'shared/paginate', :@profile => @customers%>
-  <div class="center">
-    <%= link_to "Create Customer", new_customer_path, class: "btn btn-lg btn-primary" %>
-  </div>
+    <h1>Customers</h1>
+    <%= render 'shared/paginate', :@profile => @customers%>
+    <ul class="resources">
+        <% @customers.each do |customer| %>
+        <li>
+            <%= link_to customer.company, customer %>
+        </li>
+        <% end %>
+    </ul>
+    <%= render 'shared/paginate', :@profile => @customers%>
+    <div class="center">
+        <%= link_to "Create Customer", new_customer_path, class: "btn btn-lg btn-primary" %>
+    </div>
 </div>

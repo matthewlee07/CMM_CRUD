@@ -1,54 +1,49 @@
 <% provide(:title, 'Task Entries') %>
 <div class="container resources-container">
-  <h1>Task Entries</h1>
-  <%= render 'shared/paginate', :@profile => @task_entries%>
+    <h1>Task Entries</>
+    <%= render 'shared/paginate', :@profile => @task_entries%>
     <ul class="resources resources-grid">
-      <li class="center">Notes</li>
-      <li class="center">Duration (minutes)</li>
-      <li class="center">Start Time</li>
-      <li class="center">Stop Time</li>
-      <% @task_entries.each do |task_entry| %>
-        <li class="center">
-          <%= link_to task_entry.note, task_entry %>
-          <%# .where(user_id: current_user.id) %>
-        </li>
-        <li class="center"> 
-          <% if task_entry.start_time && !task_entry.duration%>
-            <p>Ongoing</p>
-          <% else %>
-            <%= task_entry.duration%>
-          <% end %>
-        </li>
-        
-        <li class="center">
-          <% if task_entry.start_time%>
-            <%= task_entry.start_time%>
-          <% else %>
-            <div class="<%= task_entry.start_time ? "hidden" : ""%>">
-              <%= form_for(task_entry, url: task_entry_start_path(task_entry), method: :put) do |f|%>
-                <% f.submit "Start Now", class:"btn btn-primary sm"%>
-              <% end%>
-            </div>
-          <% end %>
-        </li>
+        <li class="center">Notes</li>
+        <li class="center">Duration (minutes)</li>
+        <li class="center">Start Time</li>
+        <li class="center">Stop Time</li>
+        <% @task_entries.each do |task_entry| %>
+            <li class="center">
+                <%= link_to task_entry.note, task_entry %>
+            </li>
+            <li class="center"> 
+                <% if task_entry.start_time && !task_entry.duration%>
+                    <p>Ongoing</p>
+                <% else %>
+                    <%= task_entry.duration%>
+                <% end %>
+            </li>
+            <li class="center">
+                <% if task_entry.start_time%>
+                    <%= task_entry.start_time%>
+                <% else %>
+                    <div class="<%= task_entry.start_time ? "hidden" : ""%>">
+                        <%= form_for(task_entry, url: task_entry_start_path(task_entry), method: :put) do |f|%>
+                            <% f.submit "Start Now", class:"btn btn-primary sm"%>
+                        <% end%>
+                    </div>
+                <% end %>
+            </li>
 
-        <li class="center">
-          <% if task_entry.start_time && !task_entry.duration%>
-            <%= form_for(task_entry, url: task_entry_stop_path(task_entry), method: :put) do |f|%>
-              <% f.submit "Stop Now", class:"btn btn-primary sm"%>
-            <% end%>
-          <% end %>
-        </li>
-      <% end %>
-      
+            <li class="center">
+                <% if task_entry.start_time && !task_entry.duration%>
+                    <%= form_for(task_entry, url: task_entry_stop_path(task_entry), method: :put) do |f|%>
+                    <% f.submit "Stop Now", class:"btn btn-primary sm"%>
+                    <% end%>
+                <% end %>
+            </li>
+        <% end %>
     </ul>
     <section class="center total-duration">
       <span>Total Duration: </span> <%= @total_duration %> minutes
     </section>
-    
-    
-  <%= render 'shared/paginate', :@profile => @task_entries%>
-  <div class="center">
-    <%= link_to "Create Task Entry", new_task_entry_path, class: "btn btn-lg btn-primary" %>
-  </div>
+    <%= render 'shared/paginate', :@profile => @task_entries%>
+    <div class="center">
+        <%= link_to "Create Task Entry", new_task_entry_path, class: "btn btn-lg btn-primary" %>
+    </div>
 </div>

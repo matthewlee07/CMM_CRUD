@@ -39,10 +39,10 @@ class TaskEntriesController < ApplicationController
     def update
         @task_entry = TaskEntry.find(params[:id])
         if @task_entry.update_attributes(task_entry_params)
-        flash[:success] = "Updated task entry"
-        redirect_to @task_entry
+            flash[:success] = "Updated task entry"
+            redirect_to @task_entry
         else
-        render 'edit'
+            render 'edit'
         end
     end
 
