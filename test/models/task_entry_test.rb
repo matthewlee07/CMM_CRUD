@@ -20,10 +20,6 @@ class TaskEntryTest < ActiveSupport::TestCase
         @task_entry.note = " "
         assert_not @task_entry.valid?
     end
-    # test "start_time should be present" do
-    #   @task_entry.start_time = nil
-    #   assert_not @task_entry.valid?
-    # end
     # field length validation
     test "note should not be too long" do
         @task_entry.note = "a" * 1001
