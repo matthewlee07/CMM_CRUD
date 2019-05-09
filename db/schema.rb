@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2019_04_23_192735) do
 
   create_table "projects", force: :cascade do |t|
     t.string "project_name"
-    t.integer "customer_id"
+    t.bigint "customer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["customer_id"], name: "index_projects_on_customer_id"
@@ -46,8 +46,8 @@ ActiveRecord::Schema.define(version: 2019_04_23_192735) do
   end
 
   create_table "tasks", force: :cascade do |t|
-    t.integer "project_id"
-    t.integer "user_id"
+    t.bigint "project_id"
+    t.bigint "user_id"
     t.string "task_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -68,4 +68,8 @@ ActiveRecord::Schema.define(version: 2019_04_23_192735) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "projects", "customers"
+  add_foreign_key "task_entries", "tasks"
+  add_foreign_key "tasks", "projects"
+  add_foreign_key "tasks", "users"
 end
