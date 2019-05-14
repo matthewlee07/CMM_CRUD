@@ -4,7 +4,6 @@ class TaskTest < ActiveSupport::TestCase
     def setup
         @task = tasks(:one)
         @task_entry = task_entries(:one)
-        @task_entry.save
     end
 
     test "should be valid" do 

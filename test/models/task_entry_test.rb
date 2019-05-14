@@ -31,13 +31,12 @@ class TaskEntryTest < ActiveSupport::TestCase
         assert @task_entry.start_time == test_start_time
     end
     test "duration should be calcualted correctly" do 
-        @task_entry = TaskEntry.new(
+        @task_entry = TaskEntry.create!(
         task_id: @task.id,
         note: "This is a long note",
         start_time: DateTime.parse("2019-04-06 17:31:30"),
         updated_at: DateTime.parse("2019-04-06 18:31:30")
         )
-        @task_entry.save
         expected = 3600
         assert expected == @task_entry.updated_at - @task_entry.start_time
     end

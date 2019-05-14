@@ -87,8 +87,8 @@ class UserTest < ActiveSupport::TestCase
     # has_many destroy
     test "associated tasks should be destroyed" do 
         @user.tasks.create!(
-        task_name: @task.task_name, 
-        project_id: @project.id
+        project_id: @project.id,
+        task_name: @task.task_name
         )
         assert_difference 'User.count', -1 do 
         @user.destroy
